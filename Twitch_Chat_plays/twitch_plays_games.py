@@ -198,10 +198,16 @@ def switch(text):
     elif text == "q":
         pydirectinput.press('q')
 
+
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+auth_token = os.getenv('TWITCH_AUTH_TOKEN')
 server = 'irc.chat.twitch.tv'
 port = 6667
 nickname = 'chatreader'
-token = 'oauth:9o92ln368d7nyhap052w8mct5phx1v'
+token = auth_token
 channel = '#LRF_Series'
 
 sock = socket.socket()
